@@ -1,0 +1,39 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Certificates (for future HTTPS setup)
+certs/
+*.pem
+*.crt
+*.key
+*.p12
+
+# Docker volumes
+mysql_data/
+test_mysql_data/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# issue templates
+issue-body-template.md
+
+# pull request templates
+pull-request-body-template.md
