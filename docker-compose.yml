@@ -44,12 +44,13 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - "3001:3000"
+      - "3443:3443"
     volumes:
       - ../backend:/app
       - /app/node_modules
       - ../backend/.env:/app/.env:ro
       - ../backend/.env.test:/app/.env.test:ro
+      - ./certs:/app/certs:ro
     depends_on:
       - db
     networks:
@@ -62,14 +63,14 @@ services:
       target: development
     restart: always
     ports:
-      - "3000:3000"
+      - "3043:3043"
     volumes:
       - ../frontend:/app
       - /app/node_modules
       - /app/.next
+      - ./certs:/app/certs:ro
     environment:
       NODE_ENV: development
-      NEXT_PUBLIC_API_URL: http://localhost:3001
       WATCHPACK_POLLING: true
     stdin_open: true
     tty: true
